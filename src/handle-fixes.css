@@ -1,0 +1,94 @@
+/* Styles to fix the block handles and add the plus button */
+
+/* Fix handle positioning for all elements including headings */
+.milkdown .ProseMirror .handle {
+  position: absolute !important;
+  left: -28px !important; /* Move further left to make room for the add button */
+  transform: none !important;
+  display: flex !important;
+  align-items: center !important;
+  opacity: 0; /* Hide by default */
+  transition: opacity 0.2s ease !important;
+}
+
+/* Make the handle visible on hover */
+.milkdown .ProseMirror .handle:hover,
+.milkdown .ProseMirror p:hover .handle,
+.milkdown .ProseMirror h1:hover .handle,
+.milkdown .ProseMirror h2:hover .handle,
+.milkdown .ProseMirror h3:hover .handle,
+.milkdown .ProseMirror h4:hover .handle,
+.milkdown .ProseMirror h5:hover .handle,
+.milkdown .ProseMirror h6:hover .handle,
+.milkdown .ProseMirror li:hover .handle,
+.milkdown .ProseMirror blockquote:hover .handle {
+  opacity: 1 !important;
+}
+
+/* Create the add button */
+.milkdown .ProseMirror .handle::before {
+  content: "+" !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-color: #4a90e2 !important;
+  color: white !important;
+  border-radius: 50% !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  margin-right: 4px !important;
+  cursor: pointer !important;
+}
+
+/* Make room for these controls on the left */
+.milkdown .ProseMirror {
+  padding-left: 40px !important;
+}
+
+/* Fix handle appearance */
+.milkdown .ProseMirror .handle .drag {
+  width: 16px !important;
+  height: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: grab !important;
+}
+
+/* Fix dots in handle */
+.milkdown .ProseMirror .handle .drag svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+}
+
+/* Ensure the add button is clickable */
+.milkdown .ProseMirror {
+  position: relative !important;
+}
+
+/* Fix block hover states to improve handle visibility */
+.milkdown .ProseMirror p:hover,
+.milkdown .ProseMirror h1:hover,
+.milkdown .ProseMirror h2:hover,
+.milkdown .ProseMirror h3:hover,
+.milkdown .ProseMirror h4:hover,
+.milkdown .ProseMirror h5:hover,
+.milkdown .ProseMirror h6:hover,
+.milkdown .ProseMirror li:hover,
+.milkdown .ProseMirror blockquote:hover {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Fix positioning for nested elements */
+.milkdown .ProseMirror ul .handle,
+.milkdown .ProseMirror ol .handle {
+  left: -40px !important;
+}
+
+/* Ensure handles are in front of other content */
+.milkdown .ProseMirror .handle {
+  z-index: 10 !important;
+}

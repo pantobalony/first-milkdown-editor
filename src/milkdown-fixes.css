@@ -1,0 +1,151 @@
+/* Core styling fixes for Milkdown Crepe */
+
+/* Toolbar layout fixes */
+.milkdown-toolbar,
+[data-milkdown-toolbar],
+div[data-type="toolbar"],
+.toolbar-wrapper,
+.milkdown .toolbar,
+.toolbar {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  padding: 8px !important;
+  border-top: 1px solid #eee !important;
+  position: sticky !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  background-color: #f5f5f5 !important;
+  z-index: 100 !important;
+  pointer-events: auto !important;
+  height: auto !important;
+  min-height: 40px !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Button styling */
+.milkdown-toolbar button,
+[data-milkdown-toolbar] button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 2px !important;
+  padding: 4px 8px !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+}
+
+.milkdown-toolbar button:hover,
+[data-milkdown-toolbar] button:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Menu items positioning */
+.milkdown-menu-wrapper,
+.milkdown-menu,
+[data-type="menu"],
+.menu-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Use a MutationObserver to keep toolbar visible */
+/* Since we can't actually add JS directly, we'll define a CSS container that will force visibility */
+.editor-container {
+  position: relative !important;
+}
+
+.editor-container::after {
+  content: "";
+  display: none !important; /* Display none to not affect layout */
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  background: transparent !important;
+  z-index: -1 !important;
+}
+
+/* Proper editor layout */
+.milkdown,
+.milkdown-root {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-height: 300px !important;
+  position: relative !important;
+}
+
+/* Editor content area */
+.milkdown .ProseMirror {
+  flex: 1 !important;
+  padding: 16px !important;
+  overflow-y: auto !important;
+  outline: none !important;
+}
+
+/* Typography improvements */
+.milkdown h1 {
+  font-size: 2rem !important;
+  margin: 1.5rem 0 1rem !important;
+}
+
+.milkdown h2 {
+  font-size: 1.5rem !important;
+  margin: 1.25rem 0 0.75rem !important;
+}
+
+.milkdown h3 {
+  font-size: 1.25rem !important;
+  margin: 1rem 0 0.5rem !important;
+}
+
+.milkdown p {
+  margin: 0.75rem 0 !important;
+}
+
+.milkdown ul, 
+.milkdown ol {
+  padding-left: 2rem !important;
+}
+
+/* Properly position slash command menu */
+.milkdown-slash-menu {
+  position: absolute !important;
+  z-index: 100 !important;
+  background-color: white !important;
+  border: 1px solid #eee !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure block tools are horizontally arranged */
+.milkdown-block-tools {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 4px !important;
+}
+
+/* Force toolbar and icon color */
+[data-milkdown-toolbar] button svg,
+.milkdown-toolbar button svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: #333 !important;
+}

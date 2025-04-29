@@ -1,0 +1,28 @@
+/* MilkdownEditor.css - Simplified for compatibility */
+.milkdown-editor-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+  min-height: 400px;
+}
+
+/* Make sure the editor takes up the whole space */
+[data-milkdown-root] {
+  height: 100%;
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Editor container */
+.milkdown {
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 4px;
+  padding: 8px;
+  overflow: auto;
+  height: 100%;
+}
